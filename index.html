@@ -1,0 +1,177 @@
+﻿<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang="en-US"><!--<![endif]-->
+<head>
+    <title>boyqian</title>
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <![endif]-->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Premium theme.">
+    <meta name="keywords" content="boyqian"/>
+    <meta name="author" content="boyqian">
+    <!-- Fav icon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <!-- <meta name="robots" content="index,follow"> -->
+
+    <!-- ############################# Stylesheets ############################# -->
+
+    <link rel="stylesheet" href="css/style.css?boyqian=20170520" media="screen" />
+
+    <!-- ############################# Javascript - Modernizr ############################# -->
+
+    <script src="js/modernizr.custom.js"></script>
+    
+</head>
+<body>
+<!--[if lte IE 8]>
+<div id="ie6-message"><p>你正在使用IE8浏览器或旧版的，建议更新浏览器后查看效果更加 <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Upgrade your browser</a></p></div>
+<![endif]-->
+
+<!-- ############################# Page ############################# -->
+<section id="page">
+
+    <!-- ############################# Header ############################# -->
+    <header id="header">
+        <div class="container">
+            <!-- ############################# Logo ############################# -->
+            <a id="logo" href="index.html" class="smooth-link"><img src="placeholders/logo2.png" alt="Logo"></a>
+
+            <!-- ############################# Menu ############################# -->
+            <!-- Menu Tigger -->
+            <a href="#" id="menu-trigger"><span class="icon"></span></a>
+            <!-- /menu Tigger -->
+        </div>
+         <!-- Menu Container -->
+        <div id="menu-container">
+            <div class="container">
+                <h3 class="nav-title">菜单</h3>
+                <div class="divider white"></div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#" class="active">首页</a></li>
+                        <li><a href="portfolio.html">归档</a></li>
+                        <li><a href="about.html">我们的故事</a></li>
+                        <li><a href="contact.html">联系boyqian</a></li>
+                        <li><a href="couple.html">登录Couple</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+
+    <!-- ############################# Intro Slider ############################# -->
+    <section id="intro-slider" class="carousel-slider zoom">
+        <!-- Slide -->
+        <div class="slide">
+            <div class="intro-captions">
+                <h3 class="caption-title big animated">虾虾皮&nbsp;&hearts;皮皮虾</h3><br>
+                <h3 class="caption-title small animated">致我们一起走过的岁月</h3>
+                <div class="divider white long animated"></div>
+                <a class="stamp-button intro-button smooth-link animated" href="about.html"><span id="meetTime"></span></a>
+                <a class="stamp-button intro-button smooth-link animated" href="about.html"><span id="togetherTime"></span></a>
+            </div>
+            <!-- Image -->
+            <div class="image home-slide01"></div>
+            <!-- Overlay -->
+            <span class="overlay animated"></span>
+        </div>
+        <!-- /slide -->
+        <!-- Slide -->
+        <div class="slide">
+            <div class="intro-captions">
+                <h3 class="caption-title big animated">Couple日志系统</h3><br>
+                <h3 class="caption-title small animated">记录我们平凡的生活</h3>
+                <div class="divider white long animated"></div>
+                <a class="stamp-button intro-button smooth-link animated" href="couple.html"><span>进入系统</span></a>
+            </div>
+            <!-- Image -->
+            <div class="image home-slide02"></div>
+            <!-- Overlay -->
+            <span class="overlay animated"></span>
+        </div>
+        <!-- /slide -->
+        <!-- Slide -->
+        <div class="slide">
+            <div class="intro-captions">
+                <h3 class="caption-title big animated">网易云音乐分享</h3><br>
+                <h3 class="caption-title small animated">无聊时打开听歌，可以把你喜欢的告诉我我全部放上去</h3>
+                <div class="divider white long animated"></div>
+                <a class="stamp-button intro-button smooth-link animated" href="wwq/music/"><span>去听听看</span></a>
+            </div>
+            <!-- Image -->
+            <div class="image home-slide03"></div>
+            <!-- Overlay -->
+            <span class="overlay animated"></span>
+        </div>
+        <!-- /slide -->
+        <!-- Slide -->
+        <div class="slide">
+            <div class="intro-captions">
+                <h3 class="caption-title big animated">我的博客</h3><br>
+                <h3 class="caption-title small animated">更多内容在里面查看</h3>
+                <div class="divider white long animated"></div>
+                <a class="stamp-button intro-button smooth-link animated" href="wwq/index.php"><span>进入博客</span></a>
+            </div>
+            <!-- Image -->
+            <div class="image home-slide04"></div>
+            <!-- Overlay -->
+            <span class="overlay animated"></span>
+        </div>
+        <!-- /slide -->
+    </section>
+    <span class="swipe-icon"></span>
+    <!-- /Introslider -->
+</section>
+<!-- /page -->
+
+    <!-- ############################# Javascripts ############################# -->
+    <script src="js/jquery.min.js?ver=20170520"></script>
+    <script type="text/javascript">
+    
+    function getDays(strWord,strDateStart,strDateEnd){
+   var strSeparator = "-"; //日期分隔符
+   var oDate1;
+   var oDate2;
+   var iDays;
+   oDate1= strDateStart.split(strSeparator);
+   oDate2= strDateEnd.split(strSeparator);
+   var strDateS = new Date(oDate1[0], oDate1[1]-1, oDate1[2]);
+   var strDateE = new Date(oDate2[0], oDate2[1]-1, oDate2[2]);
+   iDays = parseInt(Math.abs(strDateS - strDateE ) / 1000 / 60 / 60 /24)//把相差的毫秒数转换为天数 
+   return strWord+iDays+"天";
+}
+function getnowTime(){
+	var nowTime=new Date();
+	var resultTime=nowTime.getFullYear()+"-"+(nowTime.getMonth()+1)+"-"+nowTime.getDate();
+	return resultTime;
+	
+}
+$("#meetTime").append(getDays("相遇第","2012-09-01",getnowTime()));
+$("#togetherTime").append(getDays("相爱第","2017-03-25",getnowTime()));
+    </script>
+    <script src="js/jquery.easing-1.3.min.js?ver=20170520"></script>
+    <script src="js/jquery.queryloader2.min.js?ver=20170520"></script>
+    <script src="js/smoothscroll.js?ver=20170520"></script>
+    <script src="js/waypoints.min.js?ver=20170520"></script>
+    <script src="js/jquery.transit.min.js?ver=20170520"></script>
+    <script src="js/jquery.scrollTo.min.js?ver=20170520"></script>
+    <script src="js/jquery.small.plugins.js?ver=20170520"></script>
+    <script src="js/owl.carousel.min.js?ver=20170520"></script>
+    <script src="js/jquery.fancybox-1.3.4.pack.js?ver=20170520"></script>
+    <script src="js/retina.min.js?ver=20170520"></script>
+
+    <!-- Custom scripts -->
+    <script src="js/custom.js?ver=20170520"></script>
+</body>
+</html>
