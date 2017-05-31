@@ -1,0 +1,388 @@
+﻿<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang="en-US"><!--<![endif]-->
+<head>
+    <title>虾虾皮照片归档</title>
+   <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <![endif]-->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Premium theme.">
+    <meta name="keywords" content="boyqian"/>
+    <meta name="author" content="boyqian">
+    <!-- Fav icon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <!-- <meta name="robots" content="index,follow"> -->
+
+    <!-- ############################# Stylesheets ############################# -->
+
+    <link rel="stylesheet" href="css/style.css" media="screen" />
+
+    <!-- ############################# Javascript - Modernizr ############################# -->
+
+    <script src="js/modernizr.custom.js"></script>
+    <style type="text/css" >
+        #picture-span a>span{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<!--[if lte IE 8]>
+<div id="ie6-message"><p>You are using Internet Explorer 8.0 or older to view the web. Please upgrade to a newer browser to fully enjoy the web. <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Upgrade your browser</a></p></div>
+<![endif]-->
+
+<!-- ############################# Page ############################# -->
+<section id="page">
+
+    <!-- ############################# Header ############################# -->
+    <header id="header">
+        <div class="container">
+            <!-- ############################# Logo ############################# -->
+             <a id="logo" href="index.html" class="smooth-link"><img src="placeholders/logo2.png" alt="Logo"></a>
+
+            <!-- ############################# Menu ############################# -->
+            <!-- Menu Tigger -->
+            <a href="#" id="menu-trigger"><span class="icon"></span></a>
+            <!-- /menu Tigger -->
+        </div>
+         <!-- Menu Container -->
+        <div id="menu-container">
+            <div class="container">
+                <h3 class="nav-title">菜单</h3>
+                <div class="divider white"></div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="portfolio.html">归档</a></li>
+                        <li><a href="about.html">我们的故事</a></li>
+                        <li><a href="contact.html">联系boyqian</a></li>
+                        <li><a href="couple.html">Couple介绍</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+    <!-- ############################# Intro Image ############################# -->
+    <section id="intro-image" class="intro medium clearfix">
+        
+        <div class="intro-captions">
+            <h3 class="caption-title big animated">虾虾皮的照片归档</h3><br>
+            <h3 class="caption-title small animated">多种观图模式随意切换，图片压缩存储，负载均衡技术，添加照片需要验证身份，后期隐私权限</h3>
+            <div class="divider white long animated"></div>
+            <!--判断权限是否可以添加删除-->
+            <a class="stamp-button intro-button smooth-link animated" href="#"><span>添加照片</span></a>
+            <a class="stamp-button intro-button smooth-link animated" href="#"><span>删除照片</span></a>
+
+        </div>
+
+        <!-- Image -->
+        <div class="image zoom news-intro"></div>
+
+        <!-- Overlay -->
+        <span class="overlay animated"></span>
+
+    </section>
+
+    <!-- ############################# Page Content ############################# -->
+    <section id="content">
+    <div style="background: #f0f0f0;padding-top: 30px;text-align: center;" id="picture-span">
+            <a class="stamp-button intro-button animated" href="javascript:void(0)" onclick="turnPage('2017');"><span>2017年</span></a>
+            <a class="stamp-button intro-button animated" href="javascript:void(0)" onclick="turnPage('2016')"><span>2016年</span></a>
+            <a class="stamp-button intro-button animated" href="javascript:void(0)" onclick="turnPage('2015')"><span>2015年</span></a>
+            <a class="stamp-button intro-button animated" href="javascript:void(0)" onclick="turnPage('2014')"><span>2014年</span></a>
+            <a class="stamp-button intro-button animated" href="javascript:void(0)" onclick="turnPage('2013')"><span>2013年</span></a>
+            <a class="stamp-button intro-button animated" href="javascript:void(0)" onclick="turnPage('2012')"><span>2012年</span></a>
+            <a class="stamp-button intro-button animated" href="javascript:void(0)" onclick="turnPage('2011')"><span>2011年</span></a>
+            <a class="stamp-button intro-button animated" href="javascript:void(0)" onclick="turnPage('2010')"><span>2010年</span></a>
+    </div>
+
+        <!-- ############################# News Entries ############################# -->
+        <section id="news-entries">
+        <!--点击年份通过ajax请求换页的起点，首先得输出5条信息，通过数据库不同id在循环Limit限制输出，到底后继续请求加载判断年份后
+        所以现在首要的任务是得到当前点击的是哪一个年份在请求体中得出，并通过数据库遍历限制5条输出，之后滚动条继续请求加载，这次是加载后面没有出来的内容
+        怎样知道你开始已经加载了5条数据而不重复加载呢，就得通过一个用户来操纵，一个用户就是一个cookie或者是一个session,当然考虑到隐私问题
+        对自己的照片有的要经过加密，游客不能查看，这就要在请求页面写出，这样返回的内容不全面但是安全。
+        -->
+   <!-- Entry -->
+            <div class="entry animated" data-delay="0">
+                <!-- Container -->
+                <div class="container">
+                    <div class="col-1-3 entry-date">
+                        <span class="date">2017-01-01 20:23:10</span>
+                        <div class="categories"><a href="#">boyqian</a></div>
+                    </div>
+
+                    <div class="col-2-3 last">
+                        <h2 class="entry-title animated"><a href="#">支持大图小图拼图等多种视角的图片管理（大图）</a></h2>
+                                        <!-- Carousel slider -->
+                <div id="about-slider" class="slider carousel-slider" data-effect="goDown" data-pagination="true" data-nav="true">
+                    <!-- Slide -->
+                    <div class="slide">
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image">
+                    </div>
+                    <!-- /slide -->
+                    <!-- Slide -->
+                    <div class="slide">
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image">
+                    </div>
+                    <!-- /slide -->
+                    <!-- Slide -->
+                    <div class="slide">
+                        <img src="placeholders/about-slide02.jpg" alt="About Slide Image">
+                    </div>
+                    <!-- /slide -->
+                                        <!-- Slide -->
+                    <div class="slide">
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image">
+                    </div>
+                    <!-- /slide -->
+                                        <!-- Slide -->
+                    <div class="slide">
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image">
+                    </div>
+                    <!-- /slide -->
+                                        <!-- Slide -->
+                    <div class="slide">
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image">
+                    </div>
+                    <!-- /slide -->
+                                        <!-- Slide -->
+                    <div class="slide">
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image">
+                    </div>
+                    <!-- /slide -->
+                                        <!-- Slide -->
+                    <div class="slide">
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image">
+                    </div>
+                    <!-- /slide -->
+                                        <!-- Slide -->
+                    <div class="slide">
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image">
+                    </div>
+                    <!-- /slide -->
+                </div>
+                <!-- /Carousel slider -->
+                      <!--   <img src="placeholders/news-image02.jpg" alt="News Image" class="aligncenter"> -->
+                        <a href="#" class="readmore animated">换换视角</a>
+                    </div>
+
+                </div>
+                <!-- /container -->
+            </div>
+            <!-- /entry -->
+
+                        <!-- Entry -->
+            <div class="entry animated" data-delay="0">
+                <!-- Container -->
+                <div class="container">
+                    <div class="col-1-3 entry-date">
+                        <span class="date">2017-01-01 20:23:10</span>
+                        <div class="categories"><a href="#">boyqian</a></div>
+                    </div>
+
+                    <div class="col-2-3 last">
+                        <h2 class="entry-title animated"><a href="#">支持大图小图拼图等多种视角的图片管理（小图）</a></h2>
+                                        <!-- Carousel slider -->
+                  
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+                    
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+
+                        <img src="placeholders/about-slide02.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+
+                         <a href="#" class="readmore animated">换换视角</a>
+                </div>
+                <!-- /Carousel slider -->
+                      <!--   <img src="placeholders/news-image02.jpg" alt="News Image" class="aligncenter"> -->
+                </div>
+                <!-- /container -->
+            </div>
+            <!-- /entry -->
+
+                                    <!-- Entry -->
+            <div class="entry animated" data-delay="0">
+                <!-- Container -->
+                <div class="container">
+                    <div class="col-1-3 entry-date">
+                        <span class="date">2017-01-01 20:23:10</span>
+                        <div class="categories"><a href="#">boyqian</a></div>
+                    </div>
+
+                    <div class="col-2-3 last">
+                        <h2 class="entry-title animated"><a href="#">支持大图小图拼图等多种视角的图片管理（拼图）</a></h2>
+                                        <!-- Carousel slider -->
+                  
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 120px;">
+                    
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+
+                        <img src="placeholders/about-slide02.jpg" alt="About Slide Image" style="width: 100px;height: 60px;">
+
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 160px;">
+
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 180px;height: 160px;">
+
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+
+                        <img src="placeholders/about-slide01.jpg" alt="About Slide Image" style="width: 80px;height: 60px;">
+                        <p class="step-text animated" style="color: black">文字描述文字描述文字描述文字描述文字描述文字描述文字描述
+
+文字描述</p>
+
+                         <a href="#" class="readmore animated">换换视角</a>
+                </div>
+                <!-- /Carousel slider -->
+                      <!--   <img src="placeholders/news-image02.jpg" alt="News Image" class="aligncenter"> -->
+                      
+                    </div>
+                <!-- /container -->
+            </div>
+            <!-- /entry -->
+
+
+
+            <!--每5个记录开始加载数据这里开始-->
+            <div class="entry animated" data-delay="0">
+                <div class="container">
+
+
+                   <!--逻辑在这里面-->
+                    <div class="col-1-3 entry-date">
+                        <span class="date"></span>
+                        <div class="categories"><a href="#" title=""></a></div>
+                    </div><!--entry-date-->
+              <div class="col-2-3 last">
+                              
+                  <h2 class="entry-title animated"><a href="#">ajax请求方法</a></h2>
+
+                <img src="img/AjaxLoader.gif">
+
+              </div>
+
+
+
+
+                </div><!--container-->
+            </div><!--entry-->
+            <!--每5个记录开始加载数据这里开始-->
+            <div class="after_div"></div>
+                        <div class='ajax_loading' style='background:#F0F0F0;height:60px;width:100%;text-align:center;line-height:60px;font-size:18px;display:none;position:fixed;bottom:0px'><img src="img/AjaxLoader.gif"> 数据加载中</div>
+        </section>
+        <!-- /entries -->
+       
+    </section>
+    <!-- /content -->
+     <!-- Footer Note -->
+    <div id="footer-note">
+        <p>
+                非商业用途可copy,2017- &copy;版权所有<a href="contact.html">boyqian</a>
+ <a href="http://www.miitbeian.gov.cn/" title="" target="_blank"><img src="images/police.png" alt="">渝ICP16003938-1号</a>
+        </p>
+    </div>
+    <!-- /footer note -->
+
+</section>
+<!-- /page -->
+
+    <!-- ############################# Javascripts ############################# -->
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" >
+    //切换页面
+    function turnPage(year){
+            //ajax请求体后期改为jquery的ajax的请求，请求页面是的作用是切换页面年份
+            //在被请求页判断是那个页，根据2017查询数据库where2017的栏目返回responseText的html
+          //  alert(year);
+                //定义XMLHttpRequest对象
+var xmlHttp = false;
+try {
+    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+} catch (e) {
+    try {
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } catch (e2) {}
+}
+if (!xmlHttp && typeof XMLHttpRequest != "undefined") {
+    try
+    {
+        xmlHttp = new XMLHttpRequest();
+    }catch(e3){ xmlHttp = false;}
+}
+        xmlHttp.onreadystatechange=function(){
+            if(xmlHttp.readyState==4&&xmlHttp.status==200){
+                document.getElementById("news-entries").innerHTML=xmlHttp.responseText;
+                 console.log(xmlHttp.responseText);
+            }
+        }
+        var url="turnPage-me.php";
+        url+="?page="+year+"&sid="+Math.random();
+        xmlHttp.open('GET',url,true);
+        xmlHttp.send();
+
+    }
+        turnPage("2017");//显示2017年的照片
+    // function mutilPic(){
+    // //到达底部ajax刷新
+          var page_num=2;
+          $(document).ready(function(){
+            $(window).scroll(function(){
+              if($(document).scrollTop()>=$(document).height()-$(window).height()){
+                var div1tem = $('#container').height()
+                var str =''
+                $.ajax({
+                    type:"GET",
+                    url:'Mutilpic-me.php',
+                    dataType:'text/html',
+                    beforeSend:function(){
+                      $('.ajax_loading').show() //显示加载时候的提示
+                    },
+                    success:function(ret){
+                     $(".after_div").before(ret) //将ajxa请求的数据追加到内容里面
+                     $('.ajax_loading').hide() //请求成功,隐藏加载提示
+                    }
+                })
+              }
+            })
+          })
+    </script>
+    <script src="js/jquery.easing-1.3.min.js"></script>
+    <script src="js/jquery.queryloader2.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.transit.min.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.small.plugins.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.fancybox-1.3.4.pack.js"></script>
+    <script src="js/retina.min.js"></script>
+
+    <!-- Custom scripts -->
+    <script src="js/custom.js"></script>
+</body>
+</html>
