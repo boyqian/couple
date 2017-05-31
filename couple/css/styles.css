@@ -1,0 +1,38 @@
+﻿/*首页全部杂样式*/
+html * {-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+*, *:after, *:before {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing:border-box; margin:0;padding:0;slist-style:none;border:none;}
+body {font-size: 100%;font-family: "Microsoft yahei", serif;color: #7f8c97;background: #f3efe0;}
+img { border: 0; vertical-align: middle;max-width: 100%;}
+p { display: block; }
+ul { list-style: none; position:relative;}
+a{color: #454545; text-decoration: none; }
+a:hover { color: #000; }
+button{width: 100px;height: 30px;border-radius: 8px;padding: 0 10px;}
+button:hover{background:#6CD5B7;color: #000;}
+/* nav 导航栏*/
+header { width: 100%; height: 60px;line-height: 60px; background: #00ced1;font-size: 18px;font-weight:bold;position: fixed;top: 0px;z-index: 10;}
+header nav { margin: 0 auto; width: 980px; text-align: center }
+header nav ul li { width:105px;line-height: 60px; float: left; }
+header nav ul li a { color: #454545;display: block; }
+header nav ul li a:hover{ color: black; }
+/*底部信息*/
+footer{font-size: 16px;text-align: center;width: 100%;}
+/*侧边个人信息、与主要开发者信息固定栏*/
+.fixed{position: fixed;text-align: center;background: #f66;top: 60px;right:20px;}
+.fixed_side{float: left;text-align: center;background: #f66;top: 60px;}
+/* nav */
+#nav{position: relative;}
+#nav ul li{width: 83px;height: 42px;text-align: center;}
+.avatar { background: url(../images/guangfang.jpg) no-repeat;background-size: 160px 160px ;margin: 20px auto; width: 160px; height: 160px; border-radius: 160px; -moz-border-radius: 160px; -webkit-border-radius: 160px; overflow: hidden; }
+.avatar a { display: block; padding-top: 97px; width: 160px; height: 63px; }
+.avatar a span { display: block; margin-top: 63px; padding-top: 8px; width: 160px; height: 70px; text-align: center; font-size: 16px; line-height: 20px; color: #fff; background: rgba(0, 0, 0, .5); -webkit-transition: margin-top .2s ease-in-out; -moz-transition: margin-top .2s ease-in-out; -o-transition: margin-top .2s ease-in-out; transition: margin-top .2s ease-in-out; }
+.avatar a:hover span { display: block; margin-top: 0; }
+.avatar2 { background: url(../images/photo.jpg) no-repeat; background-size: 160px 160px ;margin: 20px auto; width: 160px; height: 160px; border-radius: 160px; -moz-border-radius: 160px; -webkit-border-radius: 160px; overflow: hidden; }
+.avatar2 a { display: block; padding-top: 97px; width: 160px; height: 63px; }
+.avatar2 a span { display: block; margin-top: 63px; padding-top: 8px; width: 160px; height: 70px; text-align: center; font-size: 16px; line-height: 20px; color: #fff; background: rgba(0, 0, 0, .5); -webkit-transition: margin-top .2s ease-in-out; -moz-transition: margin-top .2s ease-in-out; -o-transition: margin-top .2s ease-in-out; transition: margin-top .2s ease-in-out; }
+.avatar2 a:hover span { display: block; margin-top: 0; }
+.avatar3 { background: url(../images/guangfang.jpg) no-repeat; background-size: 160px 160px ;margin: 20px auto; width: 160px; height: 160px; border-radius: 160px; -moz-border-radius: 160px; -webkit-border-radius: 160px; overflow: hidden; }
+.avatar3 a { display: block; padding-top: 97px; width: 160px; height: 63px; }
+.avatar3 a span { display: block; margin-top: 63px; padding-top: 8px; width: 160px; height: 70px; text-align: center; font-size: 16px; line-height: 20px; color: #fff; background: rgba(0, 0, 0, .5); -webkit-transition: margin-top .2s ease-in-out; -moz-transition: margin-top .2s ease-in-out; -o-transition: margin-top .2s ease-in-out; transition: margin-top .2s ease-in-out; }
+.avatar3 a:hover span { display: block; margin-top: 0; }
+.to-top { display: none; padding: 0 20px; color: #fff; background-color: rgba(0,0,0,.5);border-radius: 5px;}
